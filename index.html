@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d14">
+    <title>Neon Snake | Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game-container">
+        <header class="game-header">
+            <div class="brand">
+                <span class="brand-icon">✳</span>
+                <div>
+                    <h1>NEON SNAKE</h1>
+                    <p class="subtitle">ARCADE EDITION</p>
+                </div>
+            </div>
+            <span class="live-badge"><span></span> READY</span>
+        </header>
+
+        <div class="scoreboard">
+            <div class="score-card">
+                <span class="label">CURRENT SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+            <div class="score-card best-card">
+                <span class="label">BEST SCORE</span>
+                <strong id="highScore">0</strong>
+            </div>
+        </div>
+
+        <div class="board-wrapper" id="boardWrapper">
+            <canvas id="gameBoard" width="400" height="400"
+                aria-label="Neon Snake game board"></canvas>
+            <div class="board-corner corner-tl"></div>
+            <div class="board-corner corner-tr"></div>
+            <div class="board-corner corner-bl"></div>
+            <div class="board-corner corner-br"></div>
+        </div>
+
+        <section id="startScreen" class="panel">
+            <p class="eyebrow">YOUR NEXT CHALLENGE</p>
+            <h2>Ready to play?</h2>
+            <p class="panel-description">
+                Collect energy. Grow longer. Beat your record.
+            </p>
+
+            <label for="difficulty">GAME DIFFICULTY</label>
+            <select id="difficulty">
+                <option value="250">Easy</option>
+                <option value="160" selected>Medium</option>
+                <option value="90">Hard</option>
+            </select>
+
+            <button id="startButton" class="primary-button">
+                <span>▶</span> Start Game
+            </button>
+        </section>
+
+        <section id="gameOver" class="panel" hidden>
+            <p class="eyebrow">RUN COMPLETE</p>
+            <h2 id="gameOverTitle">Game Over!</h2>
+            <p class="panel-description">
+                Final score: <strong id="finalScore">0</strong>
+            </p>
+            <button id="restartButton" class="primary-button">
+                ↻ Play Again
+            </button>
+        </section>
+
+        <section class="mobile-controls" aria-label="Movement controls">
+            <button class="direction-button up"
+                data-direction="up" aria-label="Move up">▲</button>
+            <div class="direction-row">
+                <button class="direction-button"
+                    data-direction="left" aria-label="Move left">◀</button>
+                <button class="direction-button"
+                    data-direction="down" aria-label="Move down">▼</button>
+                <button class="direction-button"
+                    data-direction="right" aria-label="Move right">▶</button>
+            </div>
+        </section>
+
+        <div class="game-controls">
+            <button id="pauseButton" disabled>Ⅱ Pause</button>
+            <button id="soundButton">♫ Sound: On</button>
+            <button id="vfxButton" aria-pressed="true">✦ VFX: On</button>
+        </div>
+
+        <footer class="instructions">
+            <span>⌨ ARROWS / WASD</span>
+            <span>•</span>
+            <span>📱 TOUCH / SWIPE</span>
+            <span>•</span>
+            <span>SPACE TO PAUSE</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
